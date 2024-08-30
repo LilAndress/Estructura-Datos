@@ -7,11 +7,14 @@ package com.mycompany.restaurante;
 
 public class Platos {
     private String nombre;
-    private double precio; // Opcional: si deseas agregar más atributos como precio
+    private int precio; // Opcional: si deseas agregar más atributos como precio
+    private int produccion;
 
     // Constructor
-    public Platos(String nombre) {
+    public Platos(String nombre, int precio, int produccion) {
         this.nombre = nombre;
+        this.precio = precio;
+        this.produccion = produccion;
     }
 
     // Métodos Getters y Setters
@@ -23,9 +26,20 @@ public class Platos {
         this.nombre = nombre;
     }
 
-    // Método toString() para mostrar la información del plato
-    @Override
-    public String toString() {
-        return "Plato: " + nombre;
+    public int getPrecio() {
+        return precio;
+        
+    }
+    
+    public void setPrecio (int precio){
+        this.precio = precio;
+    }
+    
+    public void setProduccion(int produccion){
+        this.produccion = produccion;
+    }
+   
+    public int getProduccion() {
+        return produccion;
     }
 }

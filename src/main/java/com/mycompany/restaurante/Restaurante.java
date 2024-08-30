@@ -4,10 +4,7 @@
 
 package com.mycompany.restaurante;
 
-/**
- *
- * @author SCIS2-14
- */
+
 public class Restaurante {
 
     public static void main(String[] args) {
