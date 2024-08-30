@@ -9,22 +9,22 @@ import javax.swing.JOptionPane;
 
 public class Menu {
     
-    String platos[];
+    Platos platos[];
     int datos [][];
     String dias[] = new String[]{"lunes", "Martes", "Miercoles","Jueves","Viernes","Sabado"};
     
     
     public void crearMenu(int cantidad){
         
-        platos = new String [cantidad];
+       platos = new Platos[cantidad]; // Inicialización del arreglo de objetos Platos
         int i = 0;
-        
-        while(i<cantidad){
-          platos[i] = JOptionPane.showInputDialog("Ingrese el nombre del plato" + (i+1));       
-          i++;
-        } 
+
+        while (i < cantidad) {
+            String nombrePlato = JOptionPane.showInputDialog("Ingrese el nombre del plato " + (i + 1));
+            platos[i] = new Platos(nombrePlato); // Crear un nuevo objeto Platos y añadirlo al array
+            i++;
+        }
     }
-    
     public void consultarMenu(){
       for(int i = 0; i < platos.length; i++){  
         JOptionPane.showMessageDialog(null, "platos : " + platos[i]);
@@ -35,7 +35,7 @@ public class Menu {
     }
     public void ingresarDatos(){
         datos = new int[6][platos.length];
-        for(int f=0;f<6; f++){
+        for(int f=1;f<6; f++){
             for(int c=0;c<platos.length;c++){
                 datos[f][c]=Integer.parseInt(JOptionPane.showInputDialog("Ventas para el dia" + f + "plato:" + platos[c]));
             }
